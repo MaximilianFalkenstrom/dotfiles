@@ -1,0 +1,29 @@
+[Data Source]
+DisplayName=MaximilianFalkenstrom@gmail.com
+Enabled=true
+Parent=17a37bccfbe044e2b90a6a0d6fce2143ec3f20ea
+
+[Mail Submission]
+SentFolder=folder://local/Sent
+TransportUid=c76e0c1a663046b631ce5c62c2c3d3109ef8ef37
+RepliesToOriginFolder=false
+UseSentFolder=true
+
+[Mail Composition]
+Bcc=
+Cc=
+DraftsFolder=folder://local/Drafts
+ReplyStyle=default
+SignImip=true
+TemplatesFolder=folder://local/Templates
+StartBottom=inconsistent
+TopSignature=inconsistent
+Language=
+
+[Mail Identity]
+Address=MaximilianFalkenstrom@gmail.com
+Aliases=
+Name=Maximilian Falkenström
+Organization=
+ReplyTo=
+SignatureUid=none

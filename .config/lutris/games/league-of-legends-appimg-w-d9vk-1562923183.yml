@@ -1,0 +1,11 @@
+game:
+  args: wine "/home/maximilian/.wine-appimage-lol/drive_c/Riot Games/League of Legends/LeagueClient.exe"
+  exe: /home/maximilian/Games/league-of-legends/wine-staging-i386_lol-patched_x86_64-bionic.AppImage
+system:
+  env:
+    DXVK_HUD: compiler
+    DXVK_STATE_CACHE_PATH: /home/maximilian/.wine-appimage-lol
+    WINEARCH: win32
+    WINEDEBUG: -all
+    WINEOVERRIDES: msvcp140=native
+    WINEPREFIX: /home/maximilian/.wine-appimage-lol
