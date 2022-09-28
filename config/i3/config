@@ -205,3 +205,5 @@ exec --no-startup-id firefox
 exec --no-startup-id megasync
 exec --no-startup-id spotify
 exec discord
+
+focus_follows_mouse no
