@@ -34,8 +34,18 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+# Use pactl to adjust volume in PulseAudio.
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+
+# move tiling windows via drag & drop by left-clicking into the title bar,
+# or left-clicking anywhere into the window while holding the floating modifier.
+tiling_drag modifier titlebar
 
 # start a terminal
 bindsym $mod+Return exec alacritty
@@ -43,7 +53,13 @@ bindsym $mod+Return exec alacritty
 # kill focused window
 bindsym $mod+Shift+q kill
 
-bindsym $mod+d exec --no-startup-id rofi -show run
+# start dmenu (a program launcher)
+# bindsym $mod+d exec --no-startup-id dmenu_run
+# A more modern dmenu replacement is rofi:
+bindsym $mod+d exec "rofi -modi drun,run -show drun"
+# There also is i3-dmenu-desktop which only displays applications shipping a
+# .desktop file. It is a wrapper around dmenu, so you need that installed.
+# bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+j focus left
@@ -79,9 +95,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+Shift+y layout stacking
+bindsym $mod+Shift+u layout tabbed
+bindsym $mod+Shift+h layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -137,7 +153,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec i3-msg exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -166,44 +182,71 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start Polybar
-exec_always --no-startup-id ~/.config/i3/polybar.sh
+# Focus shouldn't follow mouse
+focus_follows_mouse no
 
-# Border
-for_window [class=".*"] border pixel 5
-#for_window [class="Firefox"] border pixel 0
+# Configure space between windows and to the screen edges.
+gaps inner 15px
 
-# Gaps
-gaps outer 10
-gaps inner 20
+# Configure an additional 5px of extra space to the screen edges,
+# for a total gap of 10px to the screen edges, and 5px between windows.
+#gaps outer 5px
 
+# Media key bindings
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+
+# move workspace to left and right monitors
+bindsym $mod+Shift+m move workspace to output left
+
+# borders
+default_border pixel 3
+default_floating_border pixel 3
+
+# keyboard locale
 bindsym $mod+o "exec setxkbmap us"
 bindsym $mod+p "exec setxkbmap se"
 
-# Sound
-# increase sound level
-bindsym XF86AudioRaiseVolume exec --no-startup-id "pamixer -i 10 --allow-boost"
-bindsym $mod+XF86AudioRaiseVolume exec --no-startup-id "pamixer -i 1 --allow-boost"
-# decrease sound level
-bindsym XF86AudioLowerVolume exec --no-startup-id "pamixer -d 10 --allow-boost"
-bindsym $mod+XF86AudioLowerVolume exec --no-startup-id "pamixer -d 1 --allow-boost"
-# mute sound
-bindsym XF86AudioMute exec --no-startup-id "pamixer -t"
+bindsym $mod+Shift+s exec flameshot gui
 
-# Music
-bindsym $mod+m exec --no-startup-id "playerctl play-pause"
-bindsym $mod+n exec --no-startup-id "playerctl next"
-bindsym $mod+b exec --no-startup-id "playerctl previous"
-
-# Make common apps open on correct workspace
 assign [class="Firefox"] 1
 assign [class="discord"] 9
-assign [class="spotify"] 10
+assign [class="Spotify"] 10
 
-# Start apps on i3 start
-exec --no-startup-id firefox
-exec --no-startup-id megasync
-exec --no-startup-id spotify
-exec discord
+# colors
 
-focus_follows_mouse no
+# catppuccin-frappe
+set $rosewater #f2d5cf
+set $flamingo  #eebebe
+set $pink      #f4b8e4
+set $mauve     #ca9ee6
+set $red       #e78284
+set $maroon    #ea999c
+set $peach     #ef9f76
+set $green     #a6d189
+set $teal      #81c8be
+set $sky       #99d1db
+set $sapphire  #85c1dc
+set $blue      #8caaee
+set $lavender  #babbf1
+set $text      #c6d0f5
+set $subtext1  #b5bfe2
+set $subtext0  #a5adce
+set $overlay2  #949cbb
+set $overlay1  #838ba7
+set $overlay0  #737994
+set $surface2  #626880
+set $surface1  #51576d
+set $surface0  #414559
+set $base      #303446
+set $mantle    #292c3c
+set $crust     #232634
+
+# target                 title     bg    text   indicator  border
+client.focused           $lavender $base $text  $rosewater $lavender
+client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
+client.unfocused         $overlay0 $base $text  $rosewater $overlay0
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.background        $base
