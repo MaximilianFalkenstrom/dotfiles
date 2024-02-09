@@ -153,7 +153,8 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec i3-msg exit
+#bindsym $mod+Shift+e exec i3-msg exit
+bindsym $mod+Shift+e exec rofi -show p -modi p:rofi-power-menu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -213,6 +214,9 @@ bindsym $mod+Shift+s exec flameshot gui
 assign [class="Firefox"] 1
 assign [class="discord"] 9
 assign [class="Spotify"] 10
+
+bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo -n '{result}' | xclip"
+bindsym $mod+s exec rofi -show window -modi window -no-show-max
 
 # colors
 
