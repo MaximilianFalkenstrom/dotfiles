@@ -70,7 +70,7 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(cp dnf dotnet git golang fzf)
+plugins=(cp dnf dotnet git golang fzf z zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -103,3 +103,8 @@ source $ZSH/oh-my-zsh.sh
 path+=('/home/maxi/.local/bin')
 
 export PATH
+
+cat ~/.cache/wal/sequences
+
+bindkey '^I'   complete-word       # tab          | complete
+bindkey '^[[Z' autosuggest-accept  # shift + tab  | autosuggest
