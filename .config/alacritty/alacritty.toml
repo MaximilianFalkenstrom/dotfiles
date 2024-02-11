@@ -6,6 +6,9 @@ import = [
 [font]
 normal = { family = "Monaspace Neon", style = "bold" }
 
+[window]
+padding = { x = 20, y = 0 }
+
 # Colors (Nord)
 
 # Default colors

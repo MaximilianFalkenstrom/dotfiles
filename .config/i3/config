@@ -201,6 +201,9 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 # move workspace to left and right monitors
 bindsym $mod+Shift+m move workspace to output left
 
+# automatically place workspaces on secondary monitor
+workspace 9 output DVI-I-1
+
 # borders
 default_border pixel 3
 default_floating_border pixel 3
@@ -217,6 +220,11 @@ assign [class="Spotify"] 10
 
 bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo -n '{result}' | xclip"
 bindsym $mod+s exec rofi -show window -modi window -no-show-max
+
+# autostart
+exec spotify
+exec discord
+exec firefox
 
 # colors
 
