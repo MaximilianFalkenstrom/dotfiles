@@ -220,6 +220,7 @@ assign [class="Spotify"] 10
 
 bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo -n '{result}' | xclip"
 bindsym $mod+s exec rofi -show window -modi window -no-show-max
+bindsym $mod+e exec rofi -show emoji -modi emoji -emoji-mode copy
 
 # autostart
 exec spotify

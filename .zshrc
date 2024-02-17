@@ -108,3 +108,5 @@ cat ~/.cache/wal/sequences
 
 bindkey '^I'   complete-word       # tab          | complete
 bindkey '^[[Z' autosuggest-accept  # shift + tab  | autosuggest
+
+eval "$(zoxide init zsh)"
