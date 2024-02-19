@@ -101,6 +101,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 path+=('/home/maxi/.local/bin')
+path+=('/home/maxi/.dotnet/tools')
 
 export PATH
 
@@ -110,3 +111,6 @@ bindkey '^I'   complete-word       # tab          | complete
 bindkey '^[[Z' autosuggest-accept  # shift + tab  | autosuggest
 
 eval "$(zoxide init zsh)"
+
+alias cd=z
+alias cdi=zi
