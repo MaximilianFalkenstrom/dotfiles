@@ -102,6 +102,7 @@ source $ZSH/oh-my-zsh.sh
 
 path+=('/home/maxi/.local/bin')
 path+=('/home/maxi/.dotnet/tools')
+export PATH="$HOME/.local/share/flutter-sdk/flutter/bin:$PATH"
 
 export PATH
 
@@ -112,5 +113,5 @@ bindkey '^[[Z' autosuggest-accept  # shift + tab  | autosuggest
 
 eval "$(zoxide init zsh)"
 
-alias cd=z
-alias cdi=zi
+#alias cd=z
+#alias cdi=zi
