@@ -49,9 +49,11 @@ echo "6. picom"
 echo "7. dunst"
 echo "8. fastfetch"
 echo "9. htop"
+echo "10. fzf"
+echo "11. zoxide"
 read -r response
 if [[ "$response" == "y" ]]; then
-    sudo pacman -S --noconfirm alacritty neovim zsh autorandr feh picom dunst fastfetch htop
+    sudo pacman -S --noconfirm alacritty neovim zsh autorandr feh picom dunst fastfetch htop fzf zoxide
 fi
 
 echo "Do you want to set up openrazer and razer-cli? [Y/n]"
