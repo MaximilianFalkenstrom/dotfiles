@@ -40,20 +40,21 @@ if [[ "$response" == "y" ]]; then
 fi
 
 echo "Do you also want to install the following packages? [y/n]"
-echo "1. alacritty"
-echo "2. neovim"
-echo "3. zsh"
-echo "4. autorandr"
-echo "5. feh"
-echo "6. picom"
-echo "7. dunst"
-echo "8. fastfetch"
-echo "9. htop"
+echo " 1. alacritty"
+echo " 2. neovim"
+echo " 3. zsh"
+echo " 4. autorandr"
+echo " 5. feh"
+echo " 6. picom"
+echo " 7. dunst"
+echo " 8. fastfetch"
+echo " 9. htop"
 echo "10. fzf"
 echo "11. zoxide"
+echo "12. stow
 read -r response
 if [[ "$response" == "y" ]]; then
-    sudo pacman -S --noconfirm alacritty neovim zsh autorandr feh picom dunst fastfetch htop fzf zoxide
+    sudo pacman -S --noconfirm alacritty neovim zsh autorandr feh picom dunst fastfetch htop fzf zoxide stow
 fi
 
 echo "Do you want to set up openrazer and razer-cli? [Y/n]"
