@@ -50,4 +50,5 @@ fi
 
 feh --bg-scale /home/maxi/Pictures/wallpaper.jpg &
 polybar &
+setxkbmap se &
 i3
