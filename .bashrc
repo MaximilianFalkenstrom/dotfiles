@@ -76,3 +76,5 @@ alias tree='tree -CAhF --dirsfirst'
 # Install Starship - curl -sS https://starship.rs/install.sh | sh
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
+
+export PATH=$PATH:/home/maxi/.spicetify
