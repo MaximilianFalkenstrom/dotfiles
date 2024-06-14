@@ -226,6 +226,7 @@ bindsym $mod+e exec rofi -show emoji -modi emoji -emoji-mode copy
 exec spotify
 exec discord
 exec firefox
+exec feh --bg-scale ~/Pictures/wallpaper.jpg
 
 # colors
 
