@@ -1,0 +1,4 @@
+/home/maxi/Documents
+/home/maxi/Music
+/home/maxi/Pictures
+/home/maxi/Videos

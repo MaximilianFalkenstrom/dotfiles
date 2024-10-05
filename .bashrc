@@ -4,10 +4,6 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-
-alias la='ls -Alh'
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
 # Created by `pipx` on 2023-11-11 10:52:27
@@ -64,14 +60,28 @@ alias mkdir='mkdir -p'
 alias ping='ping -c 10'
 alias home='cd ~'
 
+alias la='ls -Alh'
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
 alias lk='ls -lSrh'               # sort by size
 alias lf="ls -l | egrep -v '^d'"  # files only
 alias ldir="ls -l | egrep '^d'"   # directories only
+
+#### Restic Backup
+alias bu='~/dotfiles/scripts/restic-backups/backup.sh backup'
+alias bud='~/dotfiles/scripts/restic-backups/backup.sh backup-dry'
+alias bur='~/dotfiles/scripts/restic-backups/backup.sh restore'
+alias bul='~/dotfiles/scripts/restic-backups/backup.sh list'
+
+alias bkz='rsync -avz ~/Documents/keepsakes/ maxi@192.168.1.238:/media/4tb/nas/keepsakes/'
 
 # Search command line history
 alias h="history | grep "
 
 alias tree='tree -CAhF --dirsfirst'
+
+alias fbg='feh --bg-scale ~/Pictures/wallpaper.jpg'
+alias dpi='razer-cli --dpi 800'
 
 # Install Starship - curl -sS https://starship.rs/install.sh | sh
 eval "$(starship init bash)"

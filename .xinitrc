@@ -50,4 +50,6 @@ fi
 
 polybar &
 setxkbmap se &
+feh --bg-scale /home/maxi/Pictures/wallpaper.jpg &
+razer-cli --dpi 800 &
 i3
