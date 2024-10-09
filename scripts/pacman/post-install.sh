@@ -51,7 +51,7 @@ echo " 8. fastfetch"
 echo " 9. htop"
 echo "10. fzf"
 echo "11. zoxide"
-echo "12. stow
+echo "12. stow"
 read -r response
 if [[ "$response" == "y" ]]; then
     sudo pacman -S --noconfirm alacritty neovim zsh autorandr feh picom dunst fastfetch htop fzf zoxide stow
