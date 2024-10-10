@@ -23,6 +23,12 @@ sudo pacman -S --noconfirm i3-wm polybar rofi
 echo "Installing web browsers (Firefox, Chromium)"
 sudo pacman -S --noconfirm firefox chromium
 
+echo "Installing xdg-user-dirs"
+sudo pacman -S --noconfirm xdg-user-dirs
+
+xdg-user-dirs-update
+xdg-settings set default-web-browser firefox.desktop
+
 echo "Installing Spotify"
 yay -S --noconfirm spotify
 
