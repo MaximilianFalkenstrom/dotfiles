@@ -26,8 +26,14 @@ sudo pacman -S --noconfirm firefox chromium
 echo "Installing xdg-user-dirs"
 sudo pacman -S --noconfirm xdg-user-dirs
 
+echo "Creating user directories"
 xdg-user-dirs-update
+
+echo "Set firefox as the default web browser"
 xdg-settings set default-web-browser firefox.desktop
+
+echo "Installing gnome-keyring"
+yay -S --noconfirm gnome-keyring
 
 echo "Installing Spotify"
 yay -S --noconfirm spotify
