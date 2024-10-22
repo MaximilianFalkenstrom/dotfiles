@@ -1,0 +1,12 @@
+[user]
+	email = maximilian@falkenstrom.dev
+	name = Maximilian Falkenström
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ5SOmQefZR0oAxQS6v5/9timeqSST+bxqQEhMnqLVxQ
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /opt/1Password/op-ssh-sign
+[commit]
+	gpgsign = true
+[core]
+	editor = nvim
