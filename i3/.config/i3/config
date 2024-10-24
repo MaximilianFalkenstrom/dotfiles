@@ -223,6 +223,7 @@ bindsym $mod+s exec rofi -show window -modi window -no-show-max
 bindsym $mod+e exec rofi -show emoji -modi emoji -emoji-mode copy
 
 # autostart
+exec --no-startup-id picom
 exec spotify
 exec discord
 exec firefox
