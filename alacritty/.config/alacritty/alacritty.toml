@@ -1,5 +1,5 @@
 import = [
-    "~/.config/alacritty/catppuccin-macchiato.toml"
+    "~/.config/alacritty/rose-pine-moon.toml"
 ]
 
 # Fonts
@@ -7,4 +7,4 @@ import = [
 normal = { family = "Monaspace Neon", style = "bold" }
 
 [window]
-padding = { x = 20, y = 0 }
+padding = { x = 5, y = 5 }
