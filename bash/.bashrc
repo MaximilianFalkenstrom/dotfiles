@@ -80,7 +80,7 @@ alias h="history | grep "
 
 alias tree='tree -CAhF --dirsfirst'
 
-alias fbg='feh --bg-scale ~/Pictures/wallpaper.jpg'
+alias fbg='feh --bg-scale ~/dotfiles/Pictures/wallpaper.jpg'
 alias dpi='razer-cli --dpi 800'
 
 # Install Starship - curl -sS https://starship.rs/install.sh | sh

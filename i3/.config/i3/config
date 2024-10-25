@@ -205,8 +205,8 @@ bindsym $mod+Shift+m move workspace to output left
 workspace 9 output DVI-I-1
 
 # borders
-default_border pixel 3
-default_floating_border pixel 3
+default_border pixel 2
+default_floating_border pixel 2
 
 # keyboard locale
 bindsym $mod+o "exec setxkbmap us"
