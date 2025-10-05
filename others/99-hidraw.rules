@@ -1,1 +1,0 @@
-SUBSYSTEM=="hidraw", SUBSYSTEMS=="usb", ATTRS{idVendor}=="0951", ATTRS{idProduct}=="1718", MODE="0666"
